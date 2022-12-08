@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
   const [name, setName] = useState("");
   const [foodItem, setFoodItem] = useState("");
-  const [Image, setImage] = useState("");
+  const [image, setImage] = useState("");
   const [gender, setGender] = useState("")
   const [eaten, setEaten] = useState(false)
   const [characters, setCharacters] = useState([]);
@@ -34,7 +34,13 @@ const App = () => {
   const handleNewCharacterSubmit = (event) => {
     event.preventDefault();
   }
+
+  return (
+    
+    <DeleteFunction />
+  )
 }
+
   
 
 export default App;
