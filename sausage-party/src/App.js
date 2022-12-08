@@ -104,33 +104,11 @@ const App = () => {
         return (
           <li>
             <div className="card">
-              <img src={character.image}></img>
-              <br />
-              <hr className="dotted"></hr>
-
-              <div className="container">
-                Name: {character.name}
-                <br />
-                <hr class="dotted"></hr>
-                Gender: {character.gender}
-                <br />
-                <hr class="dotted"></hr>
-                Item: {character.item}
-                <br />
-                <hr class="dotted"></hr>
-                Eaten
-                <br/>
-                {character.eaten ? (
-                  <input type="checkbox" checked></input>
-                ) : (
-                  <input type="checkbox"></input>
-                )}
-                <br />
-                <button className='delete' onClick={() => handleDelete(character)}>Delete</button>
-              </div>
+            <div className="container">
 
               <Update handleDelete={handleDelete} character={character}
                 setCharacters={setCharacters}  />
+            </div>
             </div>
           </li>
         );

@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+
 import axios from 'axios'
 
 const Update = (props) => {
@@ -48,11 +49,18 @@ const Update = (props) => {
         <form onSubmit={() => {
             handleUpdateDescription(props.character)
         }}>
-            <input onChange={updateName} defaultValue={props.character.name} /><br />
-            <input onChange={updateGender} defaultValue={props.character.gender} /><br />
+            Name
+            <br/>
+             <input onChange={updateName} defaultValue={props.character.name} /><br />
+            Gender<br/>
+             <input onChange={updateGender} defaultValue={props.character.gender} /><br />
+           Item<br/>
             <input onChange={updateItem} defaultValue={props.character.item} /><br />
+            Image<br/>
             <input onChange={updateImage} defaultValue={props.character.image} /><br />
-            <input onChange={updateEaten} defaultValue={props.character.eaten} /><br />
+            <br/>
+            Eaten<br/>
+             <input onChange={updateEaten} defaultValue={props.character.eaten} /><br />
             <input type="submit" value="Update Character"/><br />
         </form>
 
