@@ -15,7 +15,7 @@ const App = () => {
     setName(event.target.value);
   };
 
-  const handleFoodItemhange = (event) => {
+  const handleFoodItemChange = (event) => {
     setFoodItem(event.target.value);
   };
 
@@ -31,7 +31,7 @@ const App = () => {
     setEaten(event.target.checked);
   };
 
-  const handleNewCharacterSubmit = (event) => {
+  const handleCharacterSubmit = (event) => {
     event.preventDefault();
   }
 
