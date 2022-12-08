@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
   const [name, setName] = useState("");
   const [foodItem, setFoodItem] = useState("");
-  const [Image, setImage] = useState("");
+  const [image, setImage] = useState("");
   const [gender, setGender] = useState("")
   const [eaten, setEaten] = useState(false)
   const [characters, setCharacters] = useState([]);
@@ -31,9 +31,25 @@ const App = () => {
     setEaten(event.target.checked);
   };
 
-  const handleNewCharacterSubmit = (event) => {
+  const handleCharacterSubmit = (event) => {
     event.preventDefault();
-  }
+    
+    axios.post(
+      "http://localhost:3000/sparty",
+      {
+        name: name,
+        gender: gender,
+        item: foodItem,
+        image: image,
+        eaten: eaten,
+        
+      }).then(() => {
+        axios.get("http://localhost:3000/sparty").then((response) => {
+          setCharacters(response.data);
+        });
+      })
+    ;
+  };
 }
   
 
