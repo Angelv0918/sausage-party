@@ -33,7 +33,28 @@ const App = () => {
 
   const handleCharacterSubmit = (event) => {
     event.preventDefault();
-  }
+    console.log(name);
+    console.log(gender);
+    console.log(foodItem);
+    console.log(image);
+    console.log(eaten);
+    
+    axios.post(
+      "http://localhost:3000/sparty",
+      {
+        name: name,
+        gender: gender,
+        item: foodItem,
+        image: image,
+        eaten: eaten,
+        
+      }).then(() => {
+        axios.get("http://localhost:3000/sparty").then((response) => {
+          setCharacters(response.data);
+        });
+      })
+    ;
+  };
 
   return (
     
