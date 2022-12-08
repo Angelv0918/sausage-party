@@ -44,7 +44,7 @@ app.put('/sparty/:id', (req, res) => {
 
 //DELETE
 app.delete('/sparty/:id', (req, res) => {
-    Characters.findByIdAndDelete(req.params.id, req.body, {new:true}, (err, deletedChar) => {
+    Characters.findByIdAndDelete(req.params.id, (err, deletedChar) => {
         res.json(deletedChar)
     })
 })
