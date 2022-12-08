@@ -19,6 +19,7 @@ const mongoose = require('mongoose')
 // =================================
 //             CORS
 // =================================
+const cors = require('cors')
 app.use(cors())
 
 // CREATE
