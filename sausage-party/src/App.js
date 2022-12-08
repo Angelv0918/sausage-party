@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import DeleteFunction from "./components/delete.js";
+
 
 import "./App.css";
 
@@ -55,23 +55,48 @@ const App = () => {
       });
   };
 
+  const handleDelete = (charData) => {
+    axios.delete(`http://localhost:3000/sparty/${charData._id}`).then(() => {
+        axios.get('http://localhost:3000/sparty').then((response) => {
+            setCharacters(response.data)
+            console.log(response.data);
+        })
+    })
+}
+
+  useEffect = (() => {
+    axios.get("http://localhost:3000/sparty").then((response) => {
+      console.log(response.data);
+      setCharacters(response.data);
+  }) 
+}, [])
+
   return (
     <div>
-      <h1>Sausage Party</h1>
+      <h1 className="glow"><span>Sausage Party</span></h1>
 
       <form onSubmit={handleCharacterSubmit}>
         Name
+        <br />
         <input type="text" onChange={handleNameChange} />
         <br />
-        Gender: <input type="text" onChange={handleGenderChange} />
+        Gender
         <br />
-        Item: <input type="text" onChange={handleFoodItemChange} />
+        <input type="text" onChange={handleGenderChange} />
         <br />
-        Image: <input type="text" onChange={handleImageChange} />
+        item
         <br />
-        Eaten: <input type="checkbox" onChange={handleEatenChange} />
+         <input type="text" onChange={handleFoodItemChange} />
         <br />
-        <input type="submit" value="Add Member" />
+        Image 
+        <br />
+        <input type="text" onChange={handleImageChange} />
+        <br />
+        Eaten 
+        <br />
+        <input type="checkbox" onChange={handleEatenChange} />
+        <br />
+        <input className='add' type="submit" value="Add Member" />
       </form>
 
       {characters.map((character) => {
@@ -98,7 +123,7 @@ const App = () => {
                   <input type="checkbox"></input>
                 )}
                 <br />
-                <DeleteFunction />
+                <button className='delete' onClick={() => handleDelete(character)}>Delete</button>
               </div>
             </div>
           </li>
