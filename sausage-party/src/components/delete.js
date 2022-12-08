@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-const deleteFunction = () => {
+const DeleteFunction = () => {
     // =========================
     //           HOOK
     // =========================
@@ -21,4 +21,4 @@ const deleteFunction = () => {
     )
 }
 
-export default deleteFunction
+export default DeleteFunction
