@@ -116,7 +116,9 @@ const App = () => {
                 <hr class="dotted"></hr>
                 Item: {character.item}
                 <br />
-                Eaten{" "}
+                <hr class="dotted"></hr>
+                Eaten
+                <br/>
                 {character.eaten ? (
                   <input type="checkbox" checked></input>
                 ) : (

@@ -80,3 +80,7 @@ input{
 .add:hover{
   background-color: lightgreen
 }
+
+.add{
+  transition-duration: 0.4s;
+}
