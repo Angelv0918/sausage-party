@@ -15,7 +15,7 @@ const App = () => {
     setName(event.target.value);
   };
 
-  const handleFoodItemhange = (event) => {
+  const handleFoodItemChange = (event) => {
     setFoodItem(event.target.value);
   };
 
@@ -33,6 +33,11 @@ const App = () => {
 
   const handleCharacterSubmit = (event) => {
     event.preventDefault();
+    console.log(name);
+    console.log(gender);
+    console.log(foodItem);
+    console.log(image);
+    console.log(eaten);
     
     axios.post(
       "http://localhost:3000/sparty",
@@ -50,6 +55,34 @@ const App = () => {
       })
     ;
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/sparty").then((response) => {
+      // console.log(response.data)
+      setCharacters(response.data);
+    });
+  }, []);
+
+  return (
+    <div>
+    <h1>Sausage Party</h1>
+
+      <form onSubmit={handleCharacterSubmit}>
+        Name:<input type="text" onChange={handleNameChange} />
+        <br />
+        Gender: <input type="text" onChange={handleGenderChange} />
+        <br />
+        Item: <input type="text" onChange={handleFoodItemChange} />
+        <br />
+        Image: <input type="text" onChange={handleImageChange} />
+        <br />
+        Eaten: <input type="checkbox" onChange={handleEatenChange} />
+        <br />
+      
+        <input type="submit" value="Add Member" />
+      </form>
+      </div>
+  )
 }
   
 

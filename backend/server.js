@@ -54,7 +54,7 @@ app.delete('/sparty/:id', (req, res) => {
 // =================================
 //            CONNECTIONS
 // =================================
-mongoose.connection('mongodb://localhost:27017/merncrud')
+mongoose.connect('mongodb://localhost:27017/merncrud')
 mongoose.connection.once('open', () => {
     console.log('connected to mongo...');
 })
