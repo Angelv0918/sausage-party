@@ -3,6 +3,7 @@ import axios from "axios";
 
 
 import "./App.css";
+import Update from './components/update.js'
 
 const App = () => {
   const [name, setName] = useState("");
@@ -127,6 +128,9 @@ const App = () => {
                 <br />
                 <button className='delete' onClick={() => handleDelete(character)}>Delete</button>
               </div>
+
+              <Update handleDelete={handleDelete} character={character}
+                setCharacters={setCharacters}  />
             </div>
           </li>
         );
