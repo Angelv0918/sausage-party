@@ -9,8 +9,18 @@ const App = () => {
   const [Image, setImage] = useState("");
   const [characters, setCharacters] = useState([]);
 
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
-  
+  const handleFoodItemhange = (event) => {
+    setFoodItem(event.target.value);
+  };
+
+  const handleImageChange = (event) => {
+    setImage(event.target.value);
+  };
+
 }
   
 
