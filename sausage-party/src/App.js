@@ -32,7 +32,7 @@ const App = () => {
   };
 
   const handleNewCharacterSubmit = (event) => {
-    event.preventDefault
+    event.preventDefault();
   }
 }
   
