@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import DeleteFunction from './components/delete.js'
 
 import './App.css';
 
@@ -57,8 +58,25 @@ const App = () => {
   };
 
   return (
-    
+    <div>
+    <h1>Sausage Party</h1>
+
+      <form onSubmit={handleCharacterSubmit}>
+       Name<input type="text" onChange={handleNameChange} />
+        <br />
+       Gender: <input type="text" onChange={handleGenderChange} />
+        <br />
+        Item: <input type="text" onChange={handleFoodItemChange} />
+        <br />
+        Image: <input type="text" onChange={handleImageChange} />
+        <br />
+       Eaten: <input type="checkbox" onChange={handleEatenChange} />
+        <br />
+      
+        <input type="submit" value="Add Member" />
+        </form>
     <DeleteFunction />
+    </div>
   )
 }
 
