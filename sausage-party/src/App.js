@@ -30,6 +30,10 @@ const App = () => {
   const handleEatenChange = (event) => {
     setEaten(event.target.checked);
   };
+
+  const handleNewCharacterSubmit = (event) => {
+    event.preventDefault();
+  }
 }
   
 
